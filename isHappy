@@ -1,0 +1,20 @@
+class Solution {
+public:
+    bool isHappy(int n) {
+        //1.不管是不是快乐数都会循环,出现循环则跳出
+        //2.循环的时候判断值是不是1, =1即为快乐数
+        bool hashTable[2000] = {false};
+        while(1){
+            int temp = 0;
+            while(n){
+                temp += (n % 10) * (n % 10);
+                n /= 10;
+            }
+            if (temp == 1 || hashTable[temp]) return temp == 1;
+            else{
+                hashTable[temp] = true;
+                n = temp;
+            } 
+        }
+    }
+};
