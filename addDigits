@@ -1,6 +1,7 @@
 class Solution {
 public:
     int addDigits(int num) {
+        //方法1.递归
         int sum = 0;
         while(num) {
             sum += num % 10;
@@ -8,5 +9,15 @@ public:
         }
         sum += num;
         return sum >= 10 ? addDigits(sum) : sum;
+    }
+    
+    int addDigits(int num) {
+        //方法2.
+        if(num > 9) {
+            num = num % 9;
+            if(num == 0)
+                return 9;
+        }
+        return num;
     }
 };
