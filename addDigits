@@ -11,6 +11,7 @@ public:
         return sum >= 10 ? addDigits(sum) : sum;
     }
     
+    //方法2规律:xyz=100*x+10*y+z=99*x+9*y+x+y+z=99*x+9*y+ab=99*x+9*y+10*a+b=99*x+9*y+9*a+a+b=..直到a+b是1位数，发现其前面都是9的倍数。
     int addDigits(int num) {
         //方法2.
         if(num > 9) {
