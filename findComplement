@@ -1,0 +1,12 @@
+class Solution {
+public:
+    int findComplement(int num) {
+        //检查num有效的二进制有x位, 然后num与x位都是1的二进制异或
+        int tmp = num, c = 0;
+        while(tmp != 0) {
+            tmp >>= 1;
+            c = (c << 1) | 1;
+        }
+        return num ^ c;
+    }
+};
